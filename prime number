@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num, i, chk, prime;
+
+        function checkprime() {
+            num = parseInt(document.getElementById("num").value);
+            if (num) {
+                chk = 0;
+                temp = document.getElementById("respara");
+                temp.style.display = "block";
+                for (i = 2; i < num; i++) {
+                    if (num % 2 == 0) {
+                        chk++;
+                        break;
+                    }
+                }
+                if (chk == 0) {
+                    document.getElementById("res").innerHTML = "a prime";
+
+                } else {
+                    document.getElementById("res").innerHTML = "not a prime";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>enter the number :<input id="num">
+        <button onclick="checkprime()">check</button></p>
+    <p id="respara" style="display:none;">it is <span id="res"></span>number</p>
+
+</body>
+
+</html>
