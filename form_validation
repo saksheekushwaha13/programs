@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action=" <?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        num1<input type="text" name="n1" id="a">
+        num1<input type="text" name="n2" id="b">
+        <input type="submit" name="sub" onclick="return check()">
+    </form>
+    <?PHP
+    if(isset($_POST["sub"]))
+    {
+        $n1=$_POST["n1"];
+        $n2=$_POST["n2"];
+        for($i=$n1;$i<=$n2;$i++)
+        {
+           if($i%2==0) echo $i." even";
+else echo $i." odd";
+
+        }
+    }
+    ?>
+    <script>
+        function check(){
+            const a = document.getElementById('a').value;
+            const b = document.getElementById('b').value;
+
+            if(!(/^[0-9]*$/).test(a)){
+                alert('not a number');
+
+                return false;
+
+            }
+
+            if(!(/^[0-9]*$/).test(b)){
+                alert('not a number');
+
+
+                return false;
+
+
+
+            }
+                return true;
+        }
+    </script>
+</body>
+</html>
